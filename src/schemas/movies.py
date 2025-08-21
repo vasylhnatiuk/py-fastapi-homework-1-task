@@ -6,6 +6,8 @@ from datetime import date
 
 from src.database.models import MovieModel
 from pydantic import BaseModel
+
+
 class MovieDetailResponseSchema(BaseModel):
     id: int
     name: str
@@ -31,3 +33,4 @@ class MovieListResponseSchema(BaseModel):
     next_page: Optional[str]
     total_pages: int
     total_items: int
+

@@ -7,6 +7,7 @@ from schemas.movies import MovieListResponseSchema, MovieDetailResponseSchema
 
 router = APIRouter()
 
+
 @router.get("/movies/", response_model=MovieListResponseSchema)
 async def get_movies(
     page: int = Query(1, ge=1),
@@ -36,7 +37,7 @@ async def get_movies(
 
 
 @router.get("/movies/{movie_id}/", response_model=MovieDetailResponseSchema)
-async def get_movies(
+async def get_movie(
     movie_id: int,
     session: AsyncSession = Depends(get_db),
 ):
